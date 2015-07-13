@@ -4,11 +4,11 @@ Runs from the SD card and uses the rest of the card as extended memory for the f
 
 ##Step 1: Flash the latest Debian Image##
 
-- Format your SD card with SDFormatter[1] for Mac
+- Format your SD card with [SDFormatter][1] for Mac
 - Don't download the "eMMC flasher" version - this will run from the BBB without an SD card present
-- Do download from here[2] the version that says "BeagleBone and BeagleBone Black via microSD card"
-- After download, unpack the image with The Unarchiver[3]
-- Download PiFiller[4] and use it to install the Debian image onto the SD card. 
+- Do download from [here][2] the version that says "BeagleBone and BeagleBone Black via microSD card"
+- After download, unpack the image with [The Unarchiver][3]
+- Download [PiFiller][4] and use it to install the Debian image onto the SD card. 
   - You have to unplug the SD card first and then follow the prompts to point to the unpacked Debian image
 - Take the SD card out of the Mac. Make sure the BBB is unplugged from everything (USB, power, and ethernet) and insert the SD card.
 - Hold down the Boot button and power up the BBB with the external power adapter.
@@ -48,9 +48,9 @@ root@beaglebone:/sys/class/gpio# cat /etc/dogtag
 Cloud9 GNOME Image 2013.09.04
 
 ###References###
-Adafruit Learing System - BeagleBone Black: Installing Operating Sytems (Mac)[5]
-Adafruit Learing System - BeagleBone Black: Flasing the BeagleBone Black [6]
-My BeagleBone Black Findings [8]
+Adafruit Learing System - BeagleBone Black: [Installing Operating Sytems (Mac)][5]
+Adafruit Learing System - BeagleBone Black: [Flasing the BeagleBone Black][6]
+[My BeagleBone Black Findings][8]
 
 ##Step 2: Extend the BeagleBone's memory##
 - Type the folowing command:
@@ -127,7 +127,7 @@ tmpfs           100M     0  100M   0% /run/user
 /dev/mmcblk1p2  3.4G  1.4G  1.9G  43% /media/rootfs
 
 ###References###
-Noob's Guide: How to Increase Memory of BeagleBone Black [7]
+Noob's Guide: [How to Increase Memory of BeagleBone Black][7]
 
 
 
