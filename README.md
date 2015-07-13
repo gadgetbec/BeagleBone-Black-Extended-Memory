@@ -78,6 +78,15 @@ tmpfs           100M     0  100M   0% /run/user
 /dev/mmcblk0p1   *        2048      198655       98304    e  W95 FAT16 (LBA)
 /dev/mmcblk0p2          198656     7577599     3689472   83  Linux
 - Enter the following commands in order
+d
+n
+p
+2
+enter 
+enter
+w
+
+- will look like this:
 
 Command (m for help): d
 Partition number (1-4): 2
