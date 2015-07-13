@@ -15,7 +15,7 @@ Runs from the SD card and uses the rest of the card as extended memory for the f
   - wait 3 to 4 seconds after all of the LEDs come on.
   - this should take 20-45min
 - When you think it's done, try to connect to the BBB with ssh using the command:
-    ssh -l root@192.168.7.2
+  - ssh -l root@192.168.7.2
 - If you receive this error message:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -34,18 +34,18 @@ Host key verification failed.
 
 - do the following:
 - Go to home directory in host computer and create a config file in the below path:
-cd ~/.ssh/ 
-nano config
+  - cd ~/.ssh/ 
+  - nano config
 - Type the following:
-Host 192.168.7.*
-    UserKnownHostsFile /dev/null
-    StrictHostKeyChecking no 
+  - Host 192.168.7.*
+    - UserKnownHostsFile /dev/null
+    - StrictHostKeyChecking no 
 - Save and exit (Ctrl+X, Y, <Enter>)
 - SSH into the device and login as root.
-ssh 192.168.7.2 -l root
+  - ssh 192.168.7.2 -l root
 - Verify the new installation
-"root@beaglebone:/sys/class/gpio# cat /etc/dogtag 
-Cloud9 GNOME Image 2013.09.04"
+  - root@beaglebone:/sys/class/gpio# cat /etc/dogtag 
+    - "Cloud9 GNOME Image 2013.09.04"
 
 ###References###
 Adafruit Learing System - BeagleBone Black: [Installing Operating Sytems (Mac)][5]
@@ -54,7 +54,7 @@ Adafruit Learing System - BeagleBone Black: [Flasing the BeagleBone Black][6]
 
 ##Step 2: Extend the BeagleBone's memory##
 - Type the folowing command:
-df -h 
+  - df -h 
 - You should see the total root filesystem size "rootfs", the SD card will show up as /dev/mmcblk0p2
 
 "Filesystem      Size  Used Avail Use% Mounted on
@@ -71,20 +71,20 @@ tmpfs           100M     0  100M   0% /run/user
 /dev/mmcblk1p2  3.4G  1.4G  1.9G  43% /media/rootfs
 
 - Repartition the memory card with the following commands
-  fdisk /dev/mmcblk0 
-  p
+  - fdisk /dev/mmcblk0 
+  - p
 - You will get a window that says: 
 "        Device Boot      Start         End      Blocks   Id  System
 /dev/mmcblk0p1   *        2048      198655       98304    e  W95 FAT16 (LBA)
 /dev/mmcblk0p2          198656     7577599     3689472   83  Linux"
 - Enter the following commands in order
-d
-n
-p
-2
-enter 
-enter
-w
+  - d
+  - n
+  - p
+  - 2
+  - enter 
+  - enter
+  - w
 
 - will look like this:
 
@@ -113,11 +113,11 @@ the next reboot or after you run partprobe(8) or kpartx(8)
 Syncing disks."
 
 - reboot the BeagleBone
-reboot
+  - reboot
 - repartition the memory card into the file system with the command:
-resize2fs /dev/mmcblk0p2
+  - resize2fs /dev/mmcblk0p2
 - Check to see if it worked
-df -h
+  - df -h
 - This is what a 16GByte SD card looks like:
 
 "root@beaglebone:~# df -h
