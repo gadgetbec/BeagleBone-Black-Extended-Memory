@@ -6,7 +6,7 @@ Runs from the SD card and uses the rest of the card as extended memory for the f
 
 - Format your SD card with [SDFormatter][1] for Mac
 - Don't download the "eMMC flasher" version - this will run from the BBB without an SD card present
-- Do download from [here][2] the version that says "BeagleBone and BeagleBone Black via microSD card"
+- Do download from [beagleboard.org/latest-images][2] the version that says "BeagleBone and BeagleBone Black via microSD card"
 - After download, unpack the image with [The Unarchiver][3]
 - Download [PiFiller][4] and use it to install the Debian image onto the SD card. 
   - You have to unplug the SD card first and then follow the prompts to point to the unpacked Debian image
@@ -44,8 +44,8 @@ Host 192.168.7.*
 - SSH into the device and login as root.
 ssh 192.168.7.2 -l root
 - Verify the new installation
-root@beaglebone:/sys/class/gpio# cat /etc/dogtag 
-Cloud9 GNOME Image 2013.09.04
+"root@beaglebone:/sys/class/gpio# cat /etc/dogtag 
+Cloud9 GNOME Image 2013.09.04"
 
 ###References###
 Adafruit Learing System - BeagleBone Black: [Installing Operating Sytems (Mac)][5]
@@ -57,7 +57,7 @@ Adafruit Learing System - BeagleBone Black: [Flasing the BeagleBone Black][6]
 df -h 
 - You should see the total root filesystem size "rootfs", the SD card will show up as /dev/mmcblk0p2
 
-Filesystem      Size  Used Avail Use% Mounted on
+"Filesystem      Size  Used Avail Use% Mounted on
 rootfs          3.5G  1.8G  1.6G  54% /
 udev             10M     0   10M   0% /dev
 tmpfs           100M  644K   99M   1% /run
@@ -74,9 +74,9 @@ tmpfs           100M     0  100M   0% /run/user
   fdisk /dev/mmcblk0 
   p
 - You will get a window that says: 
-        Device Boot      Start         End      Blocks   Id  System
+"        Device Boot      Start         End      Blocks   Id  System
 /dev/mmcblk0p1   *        2048      198655       98304    e  W95 FAT16 (LBA)
-/dev/mmcblk0p2          198656     7577599     3689472   83  Linux
+/dev/mmcblk0p2          198656     7577599     3689472   83  Linux"
 - Enter the following commands in order
 d
 n
@@ -88,7 +88,7 @@ w
 
 - will look like this:
 
-Command (m for help): d
+"Command (m for help): d
 Partition number (1-4): 2
 
 Command (m for help): n
@@ -103,15 +103,14 @@ Last sector, +sectors or +size{K,M,G} (198656-31116287, default 31116287):
 Using default value 31116287
 
 Command (m for help): w
-The partition table has been altered!
+The partition table has been altered!"
 - You will get a message like this:
-- 
-Calling ioctl() to re-read partition table.
+"Calling ioctl() to re-read partition table.
 
 WARNING: Re-reading the partition table failed with error 16: Device or resource busy.
 The kernel still uses the old table. The new table will be used at
 the next reboot or after you run partprobe(8) or kpartx(8)
-Syncing disks.
+Syncing disks."
 
 - reboot the BeagleBone
 reboot
@@ -121,7 +120,7 @@ resize2fs /dev/mmcblk0p2
 df -h
 - This is what a 16GByte SD card looks like:
 
-root@beaglebone:~# df -h
+"root@beaglebone:~# df -h
 Filesystem      Size  Used Avail Use% Mounted on
 rootfs           15G  1.8G   13G  13% /
 udev             10M     0   10M   0% /dev
@@ -133,7 +132,7 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 tmpfs           100M     0  100M   0% /run/user
 /dev/mmcblk1p1   96M   65M   32M  68% /media/BEAGLEBONE
 /dev/mmcblk0p1   96M   66M   31M  69% /media/BEAGLEBONE_
-/dev/mmcblk1p2  3.4G  1.4G  1.9G  43% /media/rootfs
+/dev/mmcblk1p2  3.4G  1.4G  1.9G  43% /media/rootfs"
 
 ###References###
 Noob's Guide: [How to Increase Memory of BeagleBone Black][7]
