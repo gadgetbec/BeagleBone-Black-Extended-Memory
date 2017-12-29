@@ -1,6 +1,7 @@
 # BeagleBone-Black-Extended-Memory
 How to perform an extended memory setup on a BeagleBone Black from a Mac.
-Runs from the SD card and uses the rest of the card as extended memory for the file system.
+
+The OS runs from the SD card and uses the rest of the card as extended memory for the file system.
 
 ##Step 1: Flash the latest Debian Image##
 
